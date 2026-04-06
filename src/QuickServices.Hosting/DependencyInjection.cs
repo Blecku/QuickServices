@@ -1,0 +1,26 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Reflection;
+
+namespace QuickServices.Hosting;
+
+public static class DependencyInjection
+{
+    public static IServiceCollection AddQuickServices(this IServiceCollection services, Assembly assembly)
+    {
+        var types = assembly.GetTypes()
+            .Where(t => t is { IsClass: true, IsAbstract: false }
+                && t.GetCustomAttribute<HostedServiceAttribute>() is not null);
+
+        foreach (var type in types)
+        {
+            if (!typeof(IHostedService).IsAssignableFrom(type))
+                throw new InvalidOperationException(
+                    $"Type '{type.FullName}' is marked with [HostedService] but does not implement IHostedService.");
+
+            services.Add(new ServiceDescriptor(typeof(IHostedService), type, ServiceLifetime.Singleton));
+        }
+
+        return services;
+    }
+}
