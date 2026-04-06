@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 
@@ -18,7 +19,7 @@ public static class DependencyInjection
                 throw new InvalidOperationException(
                     $"Type '{type.FullName}' is marked with [HostedService] but does not implement IHostedService.");
 
-            services.Add(new ServiceDescriptor(typeof(IHostedService), type, ServiceLifetime.Singleton));
+            services.TryAddEnumerable(ServiceDescriptor.Singleton(typeof(IHostedService), type));
         }
 
         return services;
