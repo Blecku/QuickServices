@@ -4,6 +4,15 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>QuickServices</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Blecku</Authors>
+    <Description>Lightweight library for quick service registration in Microsoft.Extensions.DependencyInjection.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Blecku/QuickServices</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>dependency-injection;services;di;ioc;service-registration;auto-registration;dotnet;extensions</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

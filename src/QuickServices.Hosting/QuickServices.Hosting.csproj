@@ -4,6 +4,15 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>QuickServices.Hosting</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Blecku</Authors>
+    <Description>Hosting extensions for QuickServices, integrating with Microsoft.Extensions.Hosting.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Blecku/QuickServices</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>dependency-injection;services;hosting;di;ioc;service-registration;auto-registration;hosted-services;dotnet;aspnetcore;extensions</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
