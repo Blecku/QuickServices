@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/QuickServices.Hosting/QuickServices.Hosting.csproj" />
+  <Project Path="src/QuickServices/QuickServices.csproj" />
+</Solution>
