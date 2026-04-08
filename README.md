@@ -4,7 +4,7 @@ Attribute-based service registration for Microsoft.Extensions.DependencyInjectio
 
 ## Installation
 
-QuickServices targets **.NET 10**.
+QuickServices targets **.NET 8**, **.NET 9**, and **.NET 10**.
 
 | Package | Description |
 |---|---|
