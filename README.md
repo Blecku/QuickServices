@@ -85,12 +85,12 @@ public class EmailNotifier { }
 
 ### Hosted services
 
-With the `QuickServices.Hosting` package:
+With the `QuickServices.Hosting` package, register hosted services separately:
 
 ```csharp
 using QuickServices.Hosting;
 
-builder.Services.AddQuickServices(typeof(Program).Assembly); // from QuickServices.Hosting namespace
+builder.Services.AddQuickHostedServices(typeof(Program).Assembly);
 ```
 
 ```csharp

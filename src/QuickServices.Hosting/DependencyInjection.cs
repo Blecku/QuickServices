@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
@@ -7,7 +7,7 @@ namespace QuickServices.Hosting;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddQuickServices(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection AddQuickHostedServices(this IServiceCollection services, Assembly assembly)
     {
         var types = assembly.GetTypes()
             .Where(t => t is { IsClass: true, IsAbstract: false }
