@@ -14,10 +14,14 @@ QuickServices targets **.NET 10**.
 ## Quick start
 
 ```csharp
+// Scan a specific assembly
 builder.Services.AddQuickServices(typeof(Program).Assembly);
+
+// Or auto-scan the calling assembly and all its referenced projects
+builder.Services.AddQuickServices();
 ```
 
-That's it. QuickServices scans the assembly and registers all classes decorated with service attributes.
+The parameterless overload automatically discovers all referenced assemblies that use QuickServices — no need to list them manually.
 
 ## Attributes
 
@@ -90,7 +94,11 @@ With the `QuickServices.Hosting` package, register hosted services separately:
 ```csharp
 using QuickServices.Hosting;
 
+// Scan a specific assembly
 builder.Services.AddQuickHostedServices(typeof(Program).Assembly);
+
+// Or auto-scan all referenced projects
+builder.Services.AddQuickHostedServices();
 ```
 
 ```csharp
