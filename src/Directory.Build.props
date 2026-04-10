@@ -8,6 +8,7 @@
     <Authors>Blecku</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Blecku/QuickServices</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
@@ -15,6 +16,7 @@
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)..\LICENSE" Pack="true" PackagePath="\" />
     <None Include="$(MSBuildThisFileDirectory)..\README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)..\assets\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
