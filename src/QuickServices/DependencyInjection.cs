@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using QuickServices.Core;
 using System.Reflection;
 
 namespace QuickServices;

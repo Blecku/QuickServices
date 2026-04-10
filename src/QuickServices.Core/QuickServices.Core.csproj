@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <InternalsVisibleTo Include="QuickServices" />
-    <InternalsVisibleTo Include="QuickServices.Hosting" />
-  </ItemGroup>
-
-</Project>

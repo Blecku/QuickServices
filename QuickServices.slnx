@@ -1,5 +1,4 @@
 <Solution>
-  <Project Path="src/QuickServices.Core/QuickServices.Core.csproj" Id="dec1bcbf-2254-4cfb-bcae-497ab4c7d4c8" />
   <Project Path="src/QuickServices.Hosting/QuickServices.Hosting.csproj" />
   <Project Path="src/QuickServices/QuickServices.csproj" />
 </Solution>
