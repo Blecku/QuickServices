@@ -1,9 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿namespace QuickServices;
 
-namespace QuickServices;
-
-internal interface IKeyedService
+internal interface IKeyedService : IService
 {
     object ServiceKey { get; }
-    ServiceLifetime Lifetime { get; }
 }

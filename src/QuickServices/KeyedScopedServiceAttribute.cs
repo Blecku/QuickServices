@@ -3,16 +3,15 @@ using Microsoft.Extensions.DependencyInjection;
 namespace QuickServices;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class KeyedScopedServiceAttribute<T>(object serviceKey) : Attribute, IKeyedService where T : class
+public class KeyedScopedServiceAttribute<T>(object serviceKey, int registrationOrder = 1)
+    : KeyedScopedServiceAttribute(serviceKey, registrationOrder: registrationOrder) where T : class
 {
-    public object ServiceKey { get; } = serviceKey;
-
-    public ServiceLifetime Lifetime => ServiceLifetime.Scoped;
 }
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class KeyedScopedServiceAttribute(object serviceKey) : Attribute, IKeyedService
+public class KeyedScopedServiceAttribute(object serviceKey, int registrationOrder = 1) : Attribute, IKeyedService
 {
     public object ServiceKey { get; } = serviceKey;
+    public int RegistrationOrder { get; } = registrationOrder;
     public ServiceLifetime Lifetime => ServiceLifetime.Scoped;
 }
