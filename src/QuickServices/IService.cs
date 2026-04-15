@@ -5,4 +5,5 @@ namespace QuickServices;
 internal interface IService
 {
     ServiceLifetime Lifetime { get; }
+    int RegistrationOrder { get; }
 }

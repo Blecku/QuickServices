@@ -3,13 +3,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace QuickServices;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class SingletonServiceAttribute<T> : Attribute, IService where T : class
+public class SingletonServiceAttribute<T>(int registrationOrder = 1)
+    : SingletonServiceAttribute(registrationOrder: registrationOrder) where T : class
 {
-    public ServiceLifetime Lifetime => ServiceLifetime.Singleton;
 }
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class SingletonServiceAttribute : Attribute, IService
+public class SingletonServiceAttribute(int registrationOrder = 1) : Attribute, IService
 {
     public ServiceLifetime Lifetime => ServiceLifetime.Singleton;
+    public int RegistrationOrder { get; } = registrationOrder;
 }

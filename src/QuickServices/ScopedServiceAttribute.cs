@@ -3,13 +3,14 @@
 namespace QuickServices;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class ScopedServiceAttribute<T> : Attribute, IService where T : class
+public class ScopedServiceAttribute<T>(int registrationOrder = 1)
+    : ScopedServiceAttribute(registrationOrder: registrationOrder) where T : class
 {
-    public ServiceLifetime Lifetime => ServiceLifetime.Scoped;
 }
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class ScopedServiceAttribute : Attribute, IService
+public class ScopedServiceAttribute(int registrationOrder = 1) : Attribute, IService
 {
     public ServiceLifetime Lifetime => ServiceLifetime.Scoped;
+    public int RegistrationOrder { get; } = registrationOrder;
 }

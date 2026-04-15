@@ -114,6 +114,27 @@ public class MyBackgroundJob : BackgroundService
 
 The class must implement `IHostedService`, otherwise an `InvalidOperationException` is thrown at startup.
 
+### Registration order
+
+By default, all services are registered with `RegistrationOrder = 1`. When the order matters — for example, when multiple implementations of the same interface are resolved as `IEnumerable<T>` — you can control it explicitly:
+
+```csharp
+[ScopedService<IHandler>(registrationOrder: 1)]
+public class FirstHandler : IHandler { }
+
+[ScopedService<IHandler>(registrationOrder: 2)]
+public class SecondHandler : IHandler { }
+```
+
+Services with a lower `RegistrationOrder` are registered first. This ordering is applied globally across all scanned assemblies.
+
+Keyed services support it as well:
+
+```csharp
+[KeyedScopedService<IHandler>("key", registrationOrder: 1)]
+public class FirstHandler : IHandler { }
+```
+
 ## Attribute summary
 
 | Attribute | Lifetime | Keyed |
